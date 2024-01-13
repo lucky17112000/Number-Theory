@@ -1,0 +1,64 @@
+#include <bits/stdc++.h>
+#define endl '\n'
+#define strim stringstream
+#define ll long long int
+#define inf INT_MAX
+#define negInf INT_MIN
+#define mod %
+#define find_array_max *max_element(arr.begin(), arr.end());
+#define find_array_min *min_element(arr.begin(), arr.end());
+#define pii pair<int, int>
+#define pll pair<ll, ll>
+#define psii pair<string, pair<int, int>>
+#define left_range(i, x, y) for (int i = x; i <= y; i++)
+#define right_range(i, x, y) for (int i = y; i >= x; i--)
+void hey_output()
+{
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+}
+using namespace std;
+const int N = 1e5 + 7;
+// *******important*******
+// 1.je kuno number er minimum divisior of course prime number
+// 2.sqrt er vitore 1 ta na 1 ta prime number thakei jodi number ti non prime hoy
+// *******important*******
+// O(n) it can be optimize in O(sqrt(n))
+vector<int> prime_divisor;
+void p_div(int n)
+{
+    for (int i = 2; i <= n; ++i)
+    {
+        while (n % i == 0)
+        {
+            prime_divisor.push_back(i);
+            n /= i;
+        }
+    }
+}
+static void go_on()
+{
+    int n;
+    cin >> n;
+    p_div(n);
+    for (auto u : prime_divisor)
+        cout << u << " ";
+    cout << endl;
+}
+
+int32_t main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    // hey_output();
+    ll t = 1;
+    // cin >> t;
+    while (t--)
+    {
+        go_on();
+    }
+
+    return 0;
+}

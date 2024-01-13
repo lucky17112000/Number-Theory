@@ -1,0 +1,72 @@
+#include <bits/stdc++.h>
+#define endl '\n'
+#define strim stringstream
+#define ll long long int
+#define inf INT_MAX
+#define negInf INT_MIN
+#define mod %
+#define find_array_max *max_element(arr.begin(), arr.end());
+#define find_array_min *min_element(arr.begin(), arr.end());
+#define pii pair<int, int>
+#define pll pair<ll, ll>
+#define psii pair<string, pair<int, int>>
+#define left_range(i, x, y) for (int i = x; i <= y; i++)
+#define right_range(i, x, y) for (int i = y; i >= x; i--)
+void hey_output()
+{
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+}
+using namespace std;
+const int N = 1e5 + 7;
+// O(sqrt(n))
+void divisor(int n)
+{
+    int sum = 0;
+    int cnt = 0;
+    for (int i = 1; i * i <= n; ++i)
+    {
+        if (n % i == 0)
+        {
+            if (i != n / i) // bcz sqrt value somethime same like 36 = 6 * 6 i don't need two 6 i need only 6
+            {
+                cout << i << " " << n / i;
+                cout << endl;
+                cnt += 2; // bcz i get 2 divisior and it is divisor count
+                sum += i;
+                sum += n / i;
+            }
+            else
+            {
+                cout << i << endl;
+                cnt += 1; // also divisior count
+                sum += i;
+            }
+        }
+    }
+    cout << "number of divsior : " << cnt << endl;
+    cout << "disvisor sum : " << sum << endl;
+}
+static void go_on()
+{
+    int n;
+    cin >> n;
+    divisor(n);
+}
+
+int32_t main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    // hey_output();
+    ll t = 1;
+    // cin >> t;
+    while (t--)
+    {
+        go_on();
+    }
+
+    return 0;
+}

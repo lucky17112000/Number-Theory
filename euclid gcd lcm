@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+#define endl '\n'
+#define strim stringstream
+#define ll long long int
+#define inf INT_MAX
+#define negInf INT_MIN
+#define mod %
+#define find_array_max *max_element(arr.begin(), arr.end());
+#define find_array_min *min_element(arr.begin(), arr.end());
+#define pii pair<int, int>
+#define pll pair<ll, ll>
+#define psii pair<string, pair<int, int>>
+#define left_range(i, x, y) for (int i = x; i <= y; i++)
+#define right_range(i, x, y) for (int i = y; i >= x; i--)
+void hey_output()
+{
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+}
+using namespace std;
+const int N = 1e5 + 7;
+
+// ********important*******
+// 1.euclid method
+// 2.for gcd-->remindar will be divisior and divisor will be dividn-- O(logN)
+// 3.lcm-> a*b/gcd O(1);
+// 4. gcd sob cheye boro sonka jeta die duita sonkai bag jay
+int ___gcd(int a, int b)
+{
+    if (b == 0)
+        return a;
+    return ___gcd(b, a % b);
+}
+static void go_on()
+{
+    cout << ___gcd(18, 12);
+    cout << endl;
+    cout << (12 * 18) / ___gcd(18, 12);
+}
+
+int32_t main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    hey_output();
+    ll tt = 1;
+    // cin >> tt;
+    while (tt--)
+    {
+        go_on();
+    }
+
+    return 0;
+}

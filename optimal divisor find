@@ -1,59 +1,39 @@
+// Bismillah
+
+/*When I write code, my only request to Creator(Allah) is that he opens
+my eyes of knowledge. And may he be with me... And make everything
+easy for me..Amin...............*/
+
 #include <bits/stdc++.h>
 #define endl '\n'
-#define strim stringstream
 #define ll long long int
 #define inf INT_MAX
-#define negInf INT_MIN
-#define mod %
-#define find_array_max *max_element(arr.begin(), arr.end());
-#define find_array_min *min_element(arr.begin(), arr.end());
 #define pii pair<int, int>
-#define pll pair<ll, ll>
-#define psii pair<string, pair<int, int>>
-#define left_range(i, x, y) for (int i = x; i <= y; i++)
-#define right_range(i, x, y) for (int i = y; i >= x; i--)
-void hey_output()
-{
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-}
+#define negInf INT_MIN
+// void hey_output()
+// {
+// #ifndef ONLINE_JUDGE
+//     freopen("input.txt", "r", stdin);
+//     freopen("output.txt", "w", stdout);
+// #endif
+// }
 using namespace std;
 const int N = 1e5 + 7;
-// O(sqrt(n))
-void divisor(int n)
+void makeMeHappyReducePainGoAhedNeverGiveUPIWilBeSuccessInshaAllah()
 {
-    int sum = 0;
-    int cnt = 0;
-    for (int i = 1; i * i <= n; ++i)
+//complexity sqrt(n)
+    ll n;
+    cin >> n;
+    vector<ll> divisors;
+    for (int i = 1; i <= sqrt(n); ++i)
     {
-        if (n % i == 0)
-        {
-            if (i != n / i) // bcz sqrt value somethime same like 36 = 6 * 6 i don't need two 6 i need only 6
-            {
-                cout << i << " " << n / i;
-                cout << endl;
-                cnt += 2; // bcz i get 2 divisior and it is divisor count
-                sum += i;
-                sum += n / i;
-            }
-            else
-            {
-                cout << i << endl;
-                cnt += 1; // also divisior count
-                sum += i;
-            }
+        if(n % i == 0){
+            divisors.push_back(i);
+            if(n / i != i)divisors.push_back(n / i);
         }
     }
-    cout << "number of divsior : " << cnt << endl;
-    cout << "disvisor sum : " << sum << endl;
-}
-static void go_on()
-{
-    int n;
-    cin >> n;
-    divisor(n);
+    sort(divisors.begin() , divisors.end());
+    for(auto u : divisors)cout << u << " ";
 }
 
 int32_t main()
@@ -61,12 +41,14 @@ int32_t main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     // hey_output();
-    ll t = 1;
+
+    int t = 1;
     // cin >> t;
     while (t--)
     {
-        go_on();
+        makeMeHappyReducePainGoAhedNeverGiveUPIWilBeSuccessInshaAllah();
     }
 
     return 0;
 }
+// Alhamdulillah
